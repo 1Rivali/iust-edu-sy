@@ -14,7 +14,7 @@ export class StudentEntity {
   @Column()
   password: string;
 
-  @Column({ type: 'decimal' })
+  @Column('decimal', { precision: 6, scale: 2 })
   gpa: number;
 
   @Column()
