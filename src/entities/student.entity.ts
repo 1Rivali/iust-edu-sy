@@ -29,6 +29,15 @@ export class StudentEntity {
   @Column({ default: null })
   supervisor: string;
 
+  @Column({ default: 0 })
+  planProgress: number;
+
+  @Column({ default: 0 })
+  level: number;
+
+  @Column()
+  balance: number;
+
   @OneToMany(() => SubjectEntity, (subject) => subject.student)
   subjects: SubjectEntity[];
 }

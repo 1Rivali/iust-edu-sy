@@ -31,16 +31,22 @@ export class SubjectEntity {
   is_repeated: boolean;
 
   @Column({ default: false })
-  Prohibition: boolean;
+  prohibition: boolean;
 
   @Column()
   activity: string;
 
   @Column({ default: false })
-  Withdrawal: boolean;
+  withdrawal: boolean;
 
   @Column({ default: false })
-  Failure: boolean;
+  failure: boolean;
+
+  @Column()
+  room: string;
+
+  @Column()
+  time: string;
 
   @ManyToOne(() => StudentEntity, (student) => student.subjects)
   student: StudentEntity;
