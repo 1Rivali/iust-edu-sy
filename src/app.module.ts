@@ -6,6 +6,7 @@ import { StudentEntity } from './entities/student.entity';
 import { SubjectEntity } from './entities/subject.entity';
 import { StudentModule } from './student/student.module';
 import { SubjectModule } from './subject/subject.module';
+import SemesterEntity from './entities/semester.entity';
 
 @Module({
   imports: [
@@ -15,7 +16,7 @@ import { SubjectModule } from './subject/subject.module';
       username: 'a9c403_iustedu',
       password: '3312082fady',
       database: 'db_a9c403_iustedu',
-      entities: [StudentEntity, SubjectEntity],
+      entities: [StudentEntity, SubjectEntity, SemesterEntity],
       synchronize: true,
     }),
     StudentModule,
