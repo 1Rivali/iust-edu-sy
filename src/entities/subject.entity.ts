@@ -1,5 +1,13 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 import { StudentEntity } from './student.entity';
+import SemesterEntity from './semester.entity';
 
 @Entity()
 export class SubjectEntity {
@@ -50,4 +58,7 @@ export class SubjectEntity {
 
   @ManyToOne(() => StudentEntity, (student) => student.subjects)
   student: StudentEntity;
+
+  @ManyToMany(() => SemesterEntity, (semester) => semester.subjects)
+  semesters: SemesterEntity[];
 }

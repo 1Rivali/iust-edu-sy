@@ -5,8 +5,8 @@ import { SubjectService } from './subject.service';
 export class SubjectController {
   constructor(private readonly subjectService: SubjectService) {}
 
-  @Get('/:id')
-  async getAllByStudentId(@Param('id') sid: number) {
+  @Get('/semester/:sid')
+  async getAllByStudentId(@Param('sid') sid: number) {
     return await this.subjectService.getSubjectsByStudentId(sid);
   }
 }

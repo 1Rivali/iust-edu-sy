@@ -15,7 +15,7 @@ class SemesterEntity {
   @Column()
   name: string;
 
-  @ManyToMany(() => SubjectEntity)
+  @ManyToMany(() => SubjectEntity, (subject) => subject.semesters)
   @JoinTable()
   subjects: SubjectEntity[];
 

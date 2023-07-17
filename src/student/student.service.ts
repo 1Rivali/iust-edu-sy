@@ -10,8 +10,6 @@ export class StudentService {
   constructor(
     @InjectRepository(StudentEntity)
     private studentRepo: Repository<StudentEntity>,
-    @InjectRepository(SemesterEntity)
-    private semesterRepo: Repository<SemesterEntity>,
   ) {}
 
   async findOne(username: string): Promise<StudentEntity | null> {
@@ -28,12 +26,5 @@ export class StudentService {
       throw new UnauthorizedException();
     }
     return student;
-  }
-
-  async addSemesters(semesters: SemesterEntity[]) {
-    await this.studentRepo.update(
-      { username: 'fa2110663' },
-      { semesters: semesters },
-    );
   }
 }
