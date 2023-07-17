@@ -1,6 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { LoginDto } from './dtos/login.dto';
 import { StudentService } from './student.service';
+import SemesterEntity from 'src/entities/semester.entity';
 
 @Controller('students')
 export class StudentController {

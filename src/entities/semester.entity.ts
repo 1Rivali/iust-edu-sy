@@ -19,7 +19,7 @@ class SemesterEntity {
   @JoinTable()
   subjects: SubjectEntity[];
 
-  @ManyToMany(() => StudentEntity)
+  @ManyToMany(() => StudentEntity, (student) => student.semesters)
   students: StudentEntity[];
 }
 
