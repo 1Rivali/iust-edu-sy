@@ -11,13 +11,18 @@ import SemesterEntity from './entities/semester.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'MYSQL5044.site4now.net',
-      username: 'aa57c3_iustedu',
-      password: '3312082fady',
-      database: 'db_aa57c3_iustedu',
+      type: 'postgres',
+      // host: 'localhost',
+      // username: 'root',
+      // password: '',postgresql://1Rivali:rb62zWMZsSHl@ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech/iustedu?sslmode=require
+      // database: 'iustedu',
+      host: 'ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech',
+      username: '1Rivali',
+      password: 'rb62zWMZsSHl',
+      database: 'iustedu',
       entities: [StudentEntity, SubjectEntity, SemesterEntity],
       synchronize: true,
+      ssl: true,
     }),
     StudentModule,
     SubjectModule,
