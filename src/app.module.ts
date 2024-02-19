@@ -12,10 +12,10 @@ import SemesterEntity from './entities/semester.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'MYSQL8002.site4now.net',
-      username: 'a9c403_iustedu',
+      host: 'MYSQL5044.site4now.net',
+      username: 'aa57c3_iustedu',
       password: '3312082fady',
-      database: 'db_a9c403_iustedu',
+      database: 'db_aa57c3_iustedu',
       entities: [StudentEntity, SubjectEntity, SemesterEntity],
       synchronize: true,
     }),
