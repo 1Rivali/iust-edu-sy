@@ -25,6 +25,7 @@ export class StudentService {
     if (student?.password !== loginDto.password) {
       throw new UnauthorizedException();
     }
+    console.log(student);
     return student;
   }
 }

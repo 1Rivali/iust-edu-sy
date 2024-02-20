@@ -11,23 +11,38 @@ import SemesterEntity from './entities/semester.entity';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mysql',
       // host: 'localhost',
       // username: 'root',
-      // password: '',postgresql://1Rivali:rb62zWMZsSHl@ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech/iustedu?sslmode=require
+      // password: '',
       // database: 'iustedu',
-      host: 'ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech',
-      username: '1Rivali',
-      password: 'rb62zWMZsSHl',
-      database: 'iustedu',
+      // host: 'ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech',
+      // username: '1Rivali',
+      // password: 'rb62zWMZsSHl',
+      // database: 'iustedu',
+      host: 'sql.freedb.tech',
+      // port: 3306,
+      username: 'freedb_iusteduroot',
+      password: 'K@65GF6GGFkJX6N',
+      database: 'freedb_iustedu',
       entities: [StudentEntity, SubjectEntity, SemesterEntity],
       synchronize: true,
-      ssl: true,
+      ssl: false,
     }),
     StudentModule,
     SubjectModule,
   ],
+
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
+
+//// Correct
+// host: 'ep-young-silence-a5cic3mh.us-east-2.aws.neon.tech',
+// username: '1Rivali',
+// password: 'rb62zWMZsSHl',
+// database: 'iustedu',
+// entities: [StudentEntity, SubjectEntity, SemesterEntity],
+// synchronize: true,
+// ssl: true,
