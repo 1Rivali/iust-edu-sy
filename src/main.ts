@@ -6,7 +6,7 @@ async function bootstrap() {
   app.enableCors({
     origin: '*', // or '*' to allow all origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // Enable this if you need to pass cookies with requests
+    // credentials: true, // Enable this if you need to pass cookies with requests
   });
   await app.listen(process.env.PORT!, '0.0.0.0');
 }
