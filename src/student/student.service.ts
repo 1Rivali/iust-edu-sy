@@ -17,6 +17,7 @@ export class StudentService {
       where: { username },
       relations: ['semesters'],
     });
+    console.log(student);
     return student;
   }
 
