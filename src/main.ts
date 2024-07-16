@@ -4,7 +4,7 @@ import * as proceess from 'process';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: 'https://educate-iust-edu-l182j5s9n-1rivalis-projects.vercel.app', // or '*' to allow all origins
+    origin: '*', // or '*' to allow all origins
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Enable this if you need to pass cookies with requests
   });
