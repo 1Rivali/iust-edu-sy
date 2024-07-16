@@ -24,9 +24,9 @@ export class StudentService {
   async login(loginDto: LoginDto) {
     const student = await this.findOne(loginDto.username);
     console.log(student);
-    if (student?.password !== loginDto.password) {
-      return student;
-    }
+    // if (student?.password !== loginDto.password) {
+    //   throw new UnauthorizedException();
+    // }
     console.log(student);
     return student;
   }

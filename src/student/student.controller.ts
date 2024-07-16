@@ -10,7 +10,6 @@ export class StudentController {
   @Post('/login')
   async login(@Body() loginDto: LoginDto) {
     const student = await this.studentService.login(loginDto);
-    const { password, ...rest } = student;
-    return rest;
+    return student;
   }
 }
